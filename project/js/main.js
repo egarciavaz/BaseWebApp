@@ -1,3 +1,15 @@
+$(document).ready(function(){
+  getWeather();
+})
+
+function getWeather() {
+  var url = "https://api.openweathermap.org/data/2.5/weather?q=greenville,sc,us&appid="+apiKey;
+
+  $.ajax(url,{sucess: function(data){
+    console.log(data);
+  }})
+}
+
 function showPicture(){
   // use jQuery ($ is shorthand) to find the div on the page and then change the html
   // 'rounded-circle' is a bootstrap thing! Check out more here: http://getbootstrap.com/css/
