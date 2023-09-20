@@ -3,9 +3,10 @@ $(document).ready(function() {
 })
 
 function getWeather() {
-  var url = "https://api.openweathermap.org/data/2.5/weather?q=boston&units=imperial&appid="+apiKey;
+  var url = "https://api.openweathermap.org/data/2.5/weather?q=greenville,sc,us&units=imperial&appid="+apiKey;
 
   $.ajax(url,{success: function(data) {
+    console.log(data);
     $(".city").text(data.name);
     $(".temp").text(data.main.temp);
   }})
