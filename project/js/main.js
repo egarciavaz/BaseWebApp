@@ -3,7 +3,7 @@ $(document).ready(function(){
 })
 
 function getWeather() {
-  var url = "https://api.openweathermap.org/data/2.5/weather?q=greenville,sc,us&appid="+apiKey;
+  var url = "https://api.openweathermap.org/data/2.5/weather?q=Boston&APPID="+apiKey;
 
   $.ajax(url,{sucess: function(data){
     console.log(data);
