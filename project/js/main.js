@@ -1,7 +1,3 @@
-$(document).ready(function() {
-  // getWeather();
-})
-
 function getWeather(searchQuery) {
   var url = "https://api.openweathermap.org/data/2.5/weather?q="+searchQuery+"&units=imperial&appid="+apiKey;
 
@@ -29,6 +25,5 @@ function showPicture(){
   $("#image").append('<img class="rounded-circle" src="images/high-five.gif"/>');
   $("p").html("High five! You're building your first web app!");
 
-  // jQuery can do a lot of crazy stuff, so make sure to Google around to find out more
-  
+  // jQuery can do a lot of crazy stuff, so make sure to Google around to find out more  
 }

@@ -1,33 +1,4 @@
-<meta charset="UTF-8">
-<title>Base Web App</title>
-
-
-<!-- First we import our css files -->
-
-<!-- bootstrap css -->
-<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-
-<!-- Google font CSS -->
-<link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
-
-<!-- this app's own css -->
-<link rel="stylesheet" type="text/css" href="css/main.css"/>
-
-
-
-<!-- Next import js files -->
-
-<!-- first we import jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<!-- then bootstrap -->
-<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-<script>var apiKey="<%= process.env.API_KEY %>";</script>
-<script>var firebaseApiKey="<%= process.env.FIREBASE_API_KEY %>";</script>
-
-<script type="module">
-  // Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -51,8 +22,8 @@ const firebaseConfig = {
   console.log(app);
   console.log(auth);
 
-  
-  signInWithPopup(auth, provider)
+  export function handleSignIn() {
+    signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -72,10 +43,7 @@ const firebaseConfig = {
     // ...
   });
     console.log(signInWithPopup);
+  }
 
 
   console.log(handleSignIn);
-</script>
-
-<!-- then our app's own js file -->
-<script src="js/main.js"></script>
