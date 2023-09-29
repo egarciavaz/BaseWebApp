@@ -22,7 +22,7 @@ const firebaseConfig = {
   console.log(app);
   console.log(auth);
 
-  export function handleSignIn() {
+  function handleSignIn() {
     signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
